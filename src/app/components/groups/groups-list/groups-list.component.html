@@ -1,0 +1,10 @@
+<div class="col-3 menu">
+    <ul>
+    <li>The Flight</li>
+    <li>The City</li>
+    <li>The Island</li>
+    <li>The Food</li>
+    </ul>
+<div *ngFor="let Group of groups; let i=index;">
+    <app-experience-item *ngIf="Group != null" id="{{ Group.id }}" (deleteItemEvent)="deleteItem($event)" [Group]="group"></app-experience-item>
+</div>
