@@ -3,7 +3,8 @@ export class User {
     public name: string = '';
     public avatar_path: string = '';
     public groups: Array<number> = [];
-    
+    public likes: Array<number> = [];
+    public saves: Array<number> = [];
   
     public constructor(init?:Partial<User>) {
       Object.assign(this, init);

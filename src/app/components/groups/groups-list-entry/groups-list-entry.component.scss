@@ -1,9 +1,17 @@
 @import '../../../../styles.scss';
 
 .link-container {
-    :hover {
-		box-shadow: gray 0px 0px 7px;
-	}
+	display: block;
+	padding-left: 1rem;
+	padding-top: 1rem;
+	/*:hover {
+		box-shadow: lightgray 0px 0px 10px;
+	}*/
+}
+
+.link-container:hover {
+	box-shadow: gray 0px 0px 10px;
+	border-right: $primary solid 0.6rem;
 }
 
 a {
@@ -20,51 +28,55 @@ a {
 
 .group-entry {
 	position: relative;
-    padding-top: 2rem;
 	padding-bottom: 2rem;
 	padding-left: 5rem;
 	height: 4.5rem;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-	.group-pic {
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
-		position: absolute;
-		left: 0;
-	}
-
-	.name {
-		font-weight: 500;
-		margin-bottom: 0.125rem;
-		font-weight: bold;
-		color: gray;
-		
-	}
-
-	.message, .seen {
-		font-size: 0.9rem;
-		color: gray
-	}
 	
-	.badge {
-		box-sizing: border-box;
-		position: absolute;
-		width: 1.5rem;
-		height: 1.5rem;
-		text-align: center;
-		font-size: 0.9rem;
-		padding-top: 0.125rem;
-		border-radius: 1rem;
+	//flex-direction: column;
+	//justify-content: center;
+}
+.group-pic {
+	height: 4rem;
+	width: 4rem;
+	border-radius: 50%;
+	position: absolute;
+	left: 0;
+}
 
-		top: 0em;
-		left: 2.5rem;
-		background: $accent;
-		color: white;
-	}
+.name {
+	font-weight: 500;
+	margin-bottom: 0.125rem;
+	font-weight: bold;
+	color: gray;
+	
+}
+
+.message, .seen {
+	font-size: 0.9rem;
+	color: gray
+}
+
+.badge {
+	box-sizing: border-box;
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	text-align: center;
+	font-size: 0.9rem;
+	padding-top: 0.125rem;
+	border-radius: 1rem;
+
+	top: 0em;
+	left: 2.5rem;
+	background: $primary;
+	color: white;
+}
+
+#settings-icon {
+	color: gray;
+
+}
 
 
 
@@ -73,12 +85,7 @@ a {
     display: flex;
 }
 
-.avatar {
-    background-color: #47d501;
-    font-weight: 500;
-    color: #fff;
-    font-size: 1.6rem;
-  }
+
   
   .avatar,
   .member-overlap-item {

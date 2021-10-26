@@ -1,1 +1,47 @@
-<p>group-page works!</p>
+<div class="container">
+    <h2> Group settings </h2>
+    <h3>{{group.members.length}}</h3>
+
+    <div class="movies-shows">
+        <p>Content type</p>
+        <mat-slide-toggle>
+            Movies
+        </mat-slide-toggle>
+        &nbsp;
+        <mat-slide-toggle>
+            TV Shows
+        </mat-slide-toggle>        
+    </div>
+
+    <div class="approval">
+
+        <div id="slider">
+            <p id="at-least">Match only with at least</p>
+            <p id="value">{{group.minApprove}}</p>
+            <mat-slider min="2" [max]="group.members.length" step="1" [value]="group.minApprove" (input)="onInputChange($event)"><p>value</p></mat-slider>
+            <p id="max">(members: {{group.members.length}})</p>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="chips">
+        <p>Genres</p>
+        <mat-chip-list>
+            <mat-chip>Action</mat-chip>
+            <mat-chip>Documentary</mat-chip>
+            <mat-chip>Animation</mat-chip>
+            <mat-chip>Drama</mat-chip>
+            <mat-chip>Comedy</mat-chip>
+            <mat-chip>War</mat-chip>
+            <mat-chip>Sci-fi</mat-chip>
+        </mat-chip-list>
+    </div>
+
+
+</div>
+
+  
+  
+
+

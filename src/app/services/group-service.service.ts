@@ -12,6 +12,9 @@ export class GroupService {
   getGroups(): Group[] {
     return GROUPS;
   }
+  getGroup(id: number): Group {
+    return GROUPS.find(element => element.id = id)!;
+  }
 
   addGroup(newItem: Group): void {
     GROUPS.unshift(newItem);

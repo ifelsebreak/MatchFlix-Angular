@@ -1,4 +1,4 @@
-<div *ngFor="let Group of groups; let i=index;">
+<div class="list-item-container" *ngFor="let Group of groups; let i=index;">
     <!-- <app-groups-list-entry *ngIf="Group != null" id="{{ Group.id }}" (deleteItemEvent)="deleteItem($event)" [Group]="group"></app-groups-list-entry> -->
-    <app-groups-list-entry *ngIf="groups.length > 0" [group]="groups[i]"></app-groups-list-entry>   
+    <app-groups-list-entry *ngIf="groups.length > 0" [group]="groups[i]" id="{{ groups[i].id }}"></app-groups-list-entry>   
 </div>

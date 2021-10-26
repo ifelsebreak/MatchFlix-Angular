@@ -9,6 +9,13 @@ import { CardComponent } from './components/card/card.component';
 import { GroupsListComponent } from './components/groups/groups-list/groups-list.component';
 import { GroupsListEntryComponent } from './components/groups/groups-list-entry/groups-list-entry.component';
 import { GroupPageComponent } from './components/groups/group-page/group-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { WelcomeComponent } from './components/welcome/welcome.component';
+
 
 @NgModule({
   declarations: [
@@ -17,6 +24,7 @@ import { GroupPageComponent } from './components/groups/group-page/group-page.co
     GroupsListComponent,
     GroupsListEntryComponent,
     GroupPageComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,12 @@ import { GroupPageComponent } from './components/groups/group-page/group-page.co
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerImmediately' // 'registerWhenStable:30000'
-    })
+    }),
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatIconModule,
+    MatChipsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

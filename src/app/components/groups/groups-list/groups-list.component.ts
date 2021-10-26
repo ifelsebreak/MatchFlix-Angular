@@ -18,4 +18,6 @@ export class GroupsListComponent implements OnInit {
     console.log(this.groups);
   }
 
+  
+
 }
