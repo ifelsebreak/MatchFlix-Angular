@@ -1,0 +1,30 @@
+@import '../../../../styles.scss';
+
+
+.add-group {
+    display: block;
+    height: 5rem;
+    border-top: $verylightgrey solid 1px;
+    border-bottom: $verylightgrey solid 1px;
+    text-align: center;
+    padding-top: 1rem;
+
+    &:hover {
+        box-shadow: gray 0px 0px 4px;;
+    }
+
+    &:active {
+        background-color: #ffdc6a;
+    }
+}
+
+#plus { 
+    text-decoration: none;
+    font-size: 4rem;
+    color: gray;
+    margin: auto;
+}
+
+#add-desc {
+    padding-top: 0.5rem;
+}

@@ -8,6 +8,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 2
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 3
   },
   {
     id: 3,
@@ -24,6 +26,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 1
   },
   {
     id: 4,
@@ -32,6 +35,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 3
   },
   {
     id: 5,
@@ -40,6 +44,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 1
   },
   {
     id: 6,
@@ -48,6 +53,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 1
   },
   {
     id: 7,
@@ -56,6 +62,7 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 1
   },
   {
     id: 3,
@@ -64,5 +71,6 @@ export const USERS: User[] = [
     groups: [1, 2, 3],
     likes: [205, 63174, 527641],
     saves: [6859],
+    favoriteGroup: 1
   },
 ]

@@ -1,4 +1,4 @@
-<a class="link-container" [routerLink]="['./group/' + group.id]">
+<a class="link-container" [ngClass]="{'active': selectedGroupId === group.id}" (click)="selectedGroupId = group.id"  [routerLink]="['./group/' + group.id]">
     <div class="group-entry">
         <img class="group-pic" [src]="group.pic" alt="">
         <div class="badge">
@@ -10,14 +10,18 @@
         <div class="members">
             <!--<div *ngFor="let Member of members; let i=index;">
                 <img title="Baby Yoda" class="avatar member-overlap-item" src="https://raw.githubusercontent.com/solodev/layering-profile-images/master/images/baby-yoda.jpg">
-            </div>-->
+            </div>
             
+            <div class="members-pics" *ngFor="let Member of members; let i=index;">
+                {{Member.name}}
+            </div>-->
             <img title="R2D2" class="avatar member-overlap-item" src="https://raw.githubusercontent.com/solodev/layering-profile-images/master/images/r2d2.jpg">
             <img title="Jabba the Hut" class="avatar member-overlap-item"  src="https://raw.githubusercontent.com/solodev/layering-profile-images/master/images/jabba-the-hut.png">
             <img title="Chewbacca" class="-avatar member-overlap-item"  src="https://raw.githubusercontent.com/solodev/layering-profile-images/master/images/chewy.png">
             <img title="C-3PO" class="-avatar member-overlap-item"  src="https://raw.githubusercontent.com/solodev/layering-profile-images/master/images/c-3po.jpg">
         
         </div>
-        <a [routerLink]="['./group/' + group.id + '/settings']"><span class="material-icons" id="settings-icon">settings</span></a>
+        <!-- <a id="settings-link" [routerLink]="['./group/' + group.id + '/settings']"><span class="material-icons" id="settings-icon">settings</span></a>-->
     </div>
 </a>
+

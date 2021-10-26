@@ -2,3 +2,8 @@
     <!-- <app-groups-list-entry *ngIf="Group != null" id="{{ Group.id }}" (deleteItemEvent)="deleteItem($event)" [Group]="group"></app-groups-list-entry> -->
     <app-groups-list-entry *ngIf="groups.length > 0" [group]="groups[i]" id="{{ groups[i].id }}"></app-groups-list-entry>   
 </div>
+
+<a class="add-group">
+    <p id="plus" href="#">+</p>
+    <p id="add-desc">Add new group</p>
+</a>

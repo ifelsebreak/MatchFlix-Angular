@@ -1,6 +1,7 @@
 @import '../../../../styles.scss';
 
 .link-container {
+	z-index: 5;
 	display: block;
 	padding-left: 1rem;
 	padding-top: 1rem;
@@ -10,21 +11,23 @@
 }
 
 .link-container:hover {
+	
+	box-shadow: gray 0px 0px 10px;
+	// border-right: $primary solid 0.6rem;
+}
+
+.active {
 	box-shadow: gray 0px 0px 10px;
 	border-right: $primary solid 0.6rem;
 }
+
 
 a {
 	text-decoration: none;
 }
 
-.pic {
-	width: 4rem;
-	height: 4rem;
-	background-size: cover;
-	background-position: center;
-	border-radius: 50%;
-}
+
+
 
 .group-entry {
 	position: relative;
@@ -72,6 +75,7 @@ a {
 	background: $primary;
 	color: white;
 }
+
 
 #settings-icon {
 	color: gray;

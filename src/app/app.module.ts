@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { DeckComponent } from './components/deck/deck.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     GroupsListEntryComponent,
     GroupPageComponent,
     WelcomeComponent,
+    DeckComponent,
   ],
   imports: [
     BrowserModule,
