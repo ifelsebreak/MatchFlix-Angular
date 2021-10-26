@@ -7,12 +7,16 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { CardComponent } from './components/card/card.component';
 import { GroupsListComponent } from './components/groups/groups-list/groups-list.component';
+import { GroupsListEntryComponent } from './components/groups/groups-list-entry/groups-list-entry.component';
+import { GroupPageComponent } from './components/groups/group-page/group-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     GroupsListComponent,
+    GroupsListEntryComponent,
+    GroupPageComponent,
   ],
   imports: [
     BrowserModule,

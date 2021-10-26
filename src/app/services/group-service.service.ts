@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Group } from '../models/group';
-import { GROUPS } from '../repos/groups-repo';
+import { GROUPS } from 'src/app/repos/groups-repo';
 
 @Injectable({
   providedIn: 'root'

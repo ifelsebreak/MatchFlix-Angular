@@ -1,7 +1,7 @@
 {
   "name": "MatchFlix",
   "short_name": "MatchFlix",
-  "theme_color": "#1976d2",
+  "theme_color": "#f85b00",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",

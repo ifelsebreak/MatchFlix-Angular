@@ -1,6 +1,7 @@
 export class Group {
     public id: number = 0;
     public name: string = '';
+    public pic: string = '';
     public members: Array<number> = [];
     public admin: number = 0;
     public minApprove: number = 2;

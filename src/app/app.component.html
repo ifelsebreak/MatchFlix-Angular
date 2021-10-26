@@ -1,5 +1,5 @@
-<header>
-  <div class="container">
+<div class="grid-container">
+  <div class="header">
     <a href="#" class="logo">MatchFlix</a>
     <nav>
       <ul>
@@ -9,12 +9,12 @@
     </nav>
     <a id="profile" href="#" routerLink="/list">Profile</a>
   </div>
-</header>
 
-<div class="sidelist">
-  <app-groups-list></app-groups-list>
-</div>
+  <div class="sidelist">
+    <app-groups-list></app-groups-list>
+  </div>
 
-<div class="col-9">
-  <router-outlet></router-outlet>
+  <div class="deck-area">
+    <router-outlet></router-outlet>
+  </div>
 </div>
