@@ -16,6 +16,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DeckComponent } from './components/deck/deck.component';
+import { MembersListEntryComponent } from './components/users/members-list-entry/members-list-entry.component';
+import { DesktopHomeComponent } from './desktop-home/desktop-home.component';
 
 
 @NgModule({
@@ -27,6 +29,8 @@ import { DeckComponent } from './components/deck/deck.component';
     GroupPageComponent,
     WelcomeComponent,
     DeckComponent,
+    MembersListEntryComponent,
+    DesktopHomeComponent,
   ],
   imports: [
     BrowserModule,

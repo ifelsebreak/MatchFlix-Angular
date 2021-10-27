@@ -20,7 +20,7 @@ export class CardComponent implements OnInit {
 const element = document.getElementById('front-card');
  
 spring.onUpdate(val => {
-  element!.style.transform = `translateX(${val}px)`;
+  //element!.style.transform = `translateX(${val}px)`;
 });
  
 // Set value to 50 without animating

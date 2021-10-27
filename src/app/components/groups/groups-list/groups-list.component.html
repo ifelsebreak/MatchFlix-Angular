@@ -1,9 +1,10 @@
-<div class="list-item-container" *ngFor="let Group of groups; let i=index;">
-    <!-- <app-groups-list-entry *ngIf="Group != null" id="{{ Group.id }}" (deleteItemEvent)="deleteItem($event)" [Group]="group"></app-groups-list-entry> -->
-    <app-groups-list-entry *ngIf="groups.length > 0" [group]="groups[i]" id="{{ groups[i].id }}"></app-groups-list-entry>   
-</div>
+<div class="list-container">
+    <div class="list-item-container" *ngFor="let group of groups;">
+        <app-groups-list-entry [group]="group"></app-groups-list-entry>   
+    </div>
 
-<a class="add-group">
-    <p id="plus" href="#">+</p>
-    <p id="add-desc">Add new group</p>
-</a>
+    <a class="add-group">
+        <p id="plus" href="#">+</p>
+        <p id="add-desc">Add new group</p>
+    </a>
+</div>

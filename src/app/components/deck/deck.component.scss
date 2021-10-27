@@ -16,3 +16,27 @@ a {text-decoration: none;}
 #settings-text {
     padding-top: 0.4rem;
 }
+
+@media only screen and (orientation: portrait)
+{ 
+
+    #settings-link {
+        color: gray;
+        position: fixed;
+        bottom: 0px;
+        right: 0px;
+        padding: 0.2rem;
+        display: flex;
+    }
+
+    a {text-decoration: none;}
+
+    #settings-icon {
+        font-size: 1.5rem;
+    }
+
+    #settings-text {
+        padding-top: 0.2rem;
+    }
+
+}

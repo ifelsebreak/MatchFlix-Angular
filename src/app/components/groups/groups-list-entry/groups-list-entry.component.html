@@ -1,8 +1,8 @@
-<a class="link-container" [ngClass]="{'active': selectedGroupId === group.id}" (click)="selectedGroupId = group.id"  [routerLink]="['./group/' + group.id]">
+<a class="link-container" [routerLink]="['./group/' + group.id]" [routerLinkActive]="['active']">
     <div class="group-entry">
         <img class="group-pic" [src]="group.pic" alt="">
-        <div class="badge">
-            1
+        <div class="badge" *ngIf="group.matches.length > 0">
+            {{group.matches.length}}
         </div>
         <div class="name">
             {{group.name}}
@@ -22,6 +22,8 @@
         
         </div>
         <!-- <a id="settings-link" [routerLink]="['./group/' + group.id + '/settings']"><span class="material-icons" id="settings-icon">settings</span></a>-->
+        <!-- [ngClass]="{'active': selectedGroupId === group.id} (click)="selectedGroupId = group.id" "-->
+        <span class="material-icons" id="favorite-icon" *ngIf="currentUser.favoriteGroup == group.id">favorite</span>
     </div>
 </a>
 

@@ -14,7 +14,7 @@ import { group } from '@angular/animations';
 })
 export class GroupsListEntryComponent implements OnInit {
   @Input() group: Group = {id: 999, name: '', pic: '', members: [], admin: 0, minApprove: 2, movies: true, shows: false, genres: [], matches: []};
-  id : number = this.group.id;
+  //id : number = this.group.id;
 
   @Output() currentGroup: Group = this.group;
 

@@ -4,6 +4,7 @@
     text-align: center;
     width: 80%;
     margin: auto;
+    padding-top: 4%;
 }
 
 h3 {
@@ -14,6 +15,40 @@ h3 {
 * {
     font-size: 1.5rem;
     color: gray;   
+}
+
+#close-icon {
+    position: fixed;
+    right: 0px;
+    top: 4rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+}
+
+#heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#heading>* {
+    padding-left: 1rem;
+}
+
+#matchlist-button, #favorite-button {
+    display: flex;
+}
+#matchlist-button>p, #favorite-button>p {
+    font-size: 0.8rem;
+    position: relative;
+    top: 0.4rem;
+}
+
+#matchlist-icon, #favorite-icon {
+    font-size: 2rem;
+}
+#favorite-icon {
+    color: $redA400;
 }
 
 .approval {
@@ -42,6 +77,21 @@ h3 {
 
 }
 
-.chips {
+.movies-shows, .approval, .genres, .members-list {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    //border: gray solid 1px;
+    background-color: lightgray;
+    border-radius: 0.6rem;
+    box-shadow: rgb(94, 94, 94) 2px 2px 8px;
+}
 
+.genres p {
+    position: relative;
+    bottom: 2rem;
+}
+
+.chips {
+    width: 70%;
+    margin: auto;
 }

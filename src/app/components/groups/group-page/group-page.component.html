@@ -1,6 +1,19 @@
 <div class="container">
-    <h2> Group settings </h2>
-    <h3>{{group.members.length}}</h3>
+    <div id="heading">
+        <h2>{{group.name}}</h2>
+        <div id="matchlist-button">
+            <p>See matchlist</p>
+            <span class="material-icons" id="matchlist-icon">library_add_check</span>
+        </div>
+        <div id="favorite-button">
+            <p>Favorite</p>
+            <ng-container *ngIf="currentUser.favoriteGroup == group.id; then thenBlock else elseBlock"></ng-container>
+            <ng-template #thenBlock><span class="material-icons" id="favorite-icon" (click)="favorite()">favorite</span></ng-template>
+            <ng-template #elseBlock><span class="material-icons" id="not-favorite-icon" (click)="unfavorite()">favorite_border</span></ng-template>
+        </div>
+    </div>
+    <h3>Group settings</h3>
+    <a [routerLink]="['/group/' + group.id]"><span class="material-icons" id="close-icon">highlight_off</span></a>
 
     <div class="movies-shows">
         <p>Content type</p>
@@ -14,30 +27,41 @@
     </div>
 
     <div class="approval">
-
+        <p id="at-least">Match only when at least</p>
         <div id="slider">
-            <p id="at-least">Match only with at least</p>
             <p id="value">{{group.minApprove}}</p>
             <mat-slider min="2" [max]="group.members.length" step="1" [value]="group.minApprove" (input)="onInputChange($event)"><p>value</p></mat-slider>
             <p id="max">(members: {{group.members.length}})</p>
         </div>
     </div>
 
-    <br>
-
-    <div class="chips">
+    <div class="genres">
         <p>Genres</p>
-        <mat-chip-list>
-            <mat-chip>Action</mat-chip>
-            <mat-chip>Documentary</mat-chip>
-            <mat-chip>Animation</mat-chip>
-            <mat-chip>Drama</mat-chip>
-            <mat-chip>Comedy</mat-chip>
-            <mat-chip>War</mat-chip>
-            <mat-chip>Sci-fi</mat-chip>
-        </mat-chip-list>
+        <div class="chips">
+            <mat-chip-list>
+                <mat-chip>Action</mat-chip>
+                <mat-chip>Documentary</mat-chip>
+                <mat-chip>Animation</mat-chip>
+                <mat-chip>Drama</mat-chip>
+                <mat-chip>Comedy</mat-chip>
+                <mat-chip>War</mat-chip>
+                <mat-chip>Sci-fi</mat-chip>
+                <mat-chip>Thriller</mat-chip>
+                <mat-chip>Horror</mat-chip>
+                <mat-chip>Family</mat-chip>
+            </mat-chip-list>
+        </div>
     </div>
 
+    <div class="members-list">
+        <p id="at-least">Group members:</p>
+        <div class="members-list-item" *ngFor="let member in members; let i = index">
+            <div>
+                <p>{{member}}</p>
+                <!--<img [src]="member.pic" [alt]="member.avatarPath">-->
+            </div>
+        </div>
+    </div>
 
 </div>
 

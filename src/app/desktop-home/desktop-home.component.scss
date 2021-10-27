@@ -1,0 +1,133 @@
+@import '../../styles.scss';
+
+@media only screen and (orientation: landscape)
+{
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-areas: 'header header'
+                          'sidelist deck-area';
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 4rem auto;
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+    background: $verylightgrey;
+  }
+
+  h1 {
+      margin: 0px;
+      font-size: 2rem;
+  }
+  
+  .header {
+    //background: white; /* fallback for old browsers */
+    grid-area: header;
+    //grid-column: span 2;
+    //background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    //background-image: linear-gradient(30rad, #2af598 0%, #009efd 100%);
+    background-image: linear-gradient(80rad, $primary 0%, #f9b923 100%);
+    box-shadow: 0px 5px 5px rgb(220,220,220);
+    color: white;
+    padding: 1.5rem; // altezza header
+
+    .logo {
+        float: left;
+    }
+
+    #profile {
+      float: right;
+      margin-top: -1rem;
+    }
+
+    #user-pic {
+      border-radius: 50%;
+      height: 3rem;
+      width: 3rem;
+      object-fit: cover;
+      &:hover {
+        box-shadow: rgb(93, 93, 93) 0px 0px 6px;
+      }
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    nav {
+        display: inline-block;
+        justify-content: center;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+        }
+
+        li a {
+            padding: 1em;
+
+            &:hover {
+                text-shadow:black 0px 0px 5px;
+            }
+        }
+        
+    }
+
+    #profile {
+      &:hover {
+        text-shadow:black 0px 0px 5px;
+    }
+    }
+  }
+
+
+  .whole-content {
+    display: grid;
+    grid-template-areas: 'header header'
+                          'sidelist deck-area';
+    grid-template-columns: 25% 75%;
+    
+    
+    //grid-template-rows: repeat(1, 100%);
+    // gap: 10px;
+    //grid-auto-rows: minmax(100px, auto);
+  }
+
+  .sidelist {
+    grid-area: sidelist;
+    //z-index: -1;
+    //width: 25%;
+    //height: 100%;
+    background: white;
+    // position: fixed;
+    border-right: 1px solid grayscale($color: #eeeeee);
+    //overflow: scroll;
+
+  }
+
+  .deck-area {
+    grid-area: deck-area;
+    overflow: scroll;
+    //dispy: flex;
+    //justify-content: center;
+    //height: 100%;
+    //position: fixed;
+  }
+  
+
+}

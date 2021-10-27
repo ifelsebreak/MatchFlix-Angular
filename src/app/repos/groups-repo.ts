@@ -7,11 +7,11 @@ export const GROUPS: Group[] = [
     pic: 'https://picsum.photos/100/100',
     members: [1, 3, 4, 5],
     admin: 1,
-    minApprove: 2,
+    minApprove: 4,
     movies: true,
     shows: false,
     genres: [18,36],
-    matches: [205]
+    matches: [205, 63174]
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const GROUPS: Group[] = [
     movies: true,
     shows: true,
     genres: [18,10749],
-    matches: [527641]
+    matches: []
   },
   {
     id: 3,

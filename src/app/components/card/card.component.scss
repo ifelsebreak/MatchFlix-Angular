@@ -1,11 +1,53 @@
-#front-card {
-    height: 60vh;
-    width: 35vh;
-    border-radius: 7px;
-    background: white;
-    box-shadow: gray 0px 3px 8px;
+@media only screen and (orientation: landscape)
+{ 
 
-    position: relative;
-    left: 30%;
-    top:5rem;
+    #front-card {
+        height: 55vh;
+        width: 33vh;
+        border-radius: 12px;
+        background: white;
+        box-shadow: gray 0px 3px 8px;
+
+        position: relative;
+        left: 30%;
+        right: 30%;
+        top: 12vh;
+    }
 }
+
+@media only screen and (orientation: portrait)
+{ 
+    
+    /*#front-card {
+        height: 75vh;
+        width: calc( 100% - 3em );
+        border-radius: 12px;
+        background: white;
+        box-shadow: gray 0px 3px 8px;
+        position: absolute;
+        left: 1.5em;
+        top: 10vh;   
+    }*/
+
+    #front-card {
+        border-radius: 12px;
+        background: white;
+        box-shadow: gray 0px 3px 8px;
+        position: absolute;
+        left: 3%;
+        top: 4.5rem; 
+
+        width: 94%;
+        /* whatever width you want */
+        display: inline-block;
+        
+    }
+    #front-card:after {
+        padding-top: 170%;
+        /* 16:9 ratio */
+        display: block;
+        content: '';
+    }
+
+}
+

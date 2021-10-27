@@ -1,33 +1,31 @@
 @import '../../../../styles.scss';
 
 .link-container {
-	z-index: 5;
 	display: block;
 	padding-left: 1rem;
 	padding-top: 1rem;
+	//background-color: rgb(247, 247, 247);
 	/*:hover {
 		box-shadow: lightgray 0px 0px 10px;
 	}*/
+	overflow: hidden;
 }
 
 .link-container:hover {
 	
-	box-shadow: gray 0px 0px 10px;
+	box-shadow: inset rgb(160, 160, 160) 0px 0px 5px;
 	// border-right: $primary solid 0.6rem;
 }
 
 .active {
 	box-shadow: gray 0px 0px 10px;
-	border-right: $primary solid 0.6rem;
+	border-right: $amber800 solid 0.3rem;
+	background-color: white;
 }
-
 
 a {
 	text-decoration: none;
 }
-
-
-
 
 .group-entry {
 	position: relative;
@@ -35,10 +33,33 @@ a {
 	padding-left: 5rem;
 	height: 4.5rem;
 
-	
+		
+
 	//flex-direction: column;
 	//justify-content: center;
 }
+
+#favorite-icon-big {
+	color: $redA400;
+	font-size: 6.5rem;
+	opacity: 0.2;
+	overflow: hidden;
+	position: relative;
+    left: 7.5rem;
+	bottom: 4.8rem;
+    //padding: 1rem;
+}
+#favorite-icon {
+	color: $redA400;
+	font-size: 1.7rem;
+	overflow: hidden;
+	position: relative;
+    right: 2rem;
+	bottom: 1rem;
+	text-shadow: gray 0px 0px 3px;
+    //padding: 1rem;
+}
+
 .group-pic {
 	height: 4rem;
 	width: 4rem;
@@ -52,7 +73,6 @@ a {
 	margin-bottom: 0.125rem;
 	font-weight: bold;
 	color: gray;
-	
 }
 
 .message, .seen {
@@ -76,21 +96,15 @@ a {
 	color: white;
 }
 
-
 #settings-icon {
 	color: gray;
 
 }
 
-
-
-
 .members {
     display: flex;
 }
 
-
-  
   .avatar,
   .member-overlap-item {
     height: 2rem;

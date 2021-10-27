@@ -1,6 +1,7 @@
 @import '../../../../styles.scss';
 
 
+
 .add-group {
     display: block;
     height: 5rem;
@@ -10,7 +11,7 @@
     padding-top: 1rem;
 
     &:hover {
-        box-shadow: gray 0px 0px 4px;;
+        box-shadow: inset rgb(160, 160, 160) 0px 0px 5px;
     }
 
     &:active {
@@ -27,4 +28,14 @@
 
 #add-desc {
     padding-top: 0.5rem;
+}
+
+
+@media only screen and (orientation: portrait) {
+    .list-container {
+        //position: fixed;
+        //left: 0px;
+        //top:0px;
+        //width: 100%;
+    }
 }
