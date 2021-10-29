@@ -1,3 +1,31 @@
+@import '../../../styles.scss';
+
+
+#dislike-area, #like-area {
+    //background-color: chocolate;
+    
+    height: 80%;
+    width: 20%;
+    //display: flex;
+    position: absolute;
+}
+#like-area {
+    z-index: 0;
+    top: 4rem;
+    right: 0px;
+    opacity: 0.5;
+    border: green dashed 0.5rem;
+}
+
+#dislike-area {
+    opacity: 0.5;
+    border: red dashed 0.5rem;
+}
+
+
+
+a {text-decoration: none;}
+
 #settings-link {
     color: gray;
     position: fixed;
@@ -7,8 +35,6 @@
     display: flex;
 }
 
-a {text-decoration: none;}
-
 #settings-icon {
     font-size: 2rem;
 }
@@ -17,8 +43,48 @@ a {text-decoration: none;}
     padding-top: 0.4rem;
 }
 
+#like-link {
+    background-color: $greenA200;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 4rem;
+    height: 4rem;
+    margin: 1vh;
+    padding: 0.5rem;
+    display: flex;
+    box-shadow: gray 0px 0px 8px;
+}
+#like-icon {
+    text-align: center;
+    font-size: 3rem;
+}
+
+
+@media only screen and (orientation: landscape)
+
+{
+    #like-link {
+        position: fixed;
+        bottom: 0px;
+        left: 25%;
+    }
+
+    #dislike-area {
+        z-index: 0;
+        top: 4rem;
+        left: 25%;
+    }
+
+}
+
 @media only screen and (orientation: portrait)
-{ 
+{
+    #like-link {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+    }
 
     #settings-link {
         color: gray;
@@ -37,6 +103,12 @@ a {text-decoration: none;}
 
     #settings-text {
         padding-top: 0.2rem;
+    }
+
+    #dislike-area {
+        z-index: 0;
+        top: 4rem;
+        left: 0px;
     }
 
 }

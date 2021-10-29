@@ -1,16 +1,18 @@
 <div class="grid-container">
   <div class="header">
-    <a href="#" class="logo">MatchFlix</a>
-    <nav>
-      <ul>
-        <li><a href="#" routerLink="/">Upgrade to PRO</a></li>
-        <li><a href="#" routerLink="/list">About</a></li>
-      </ul>    
-    </nav>
-    <a id="profile" href="#" routerLink="/list"><img id="user-pic" src="https://aveurope.es/wp-content/uploads/2016/11/btx-avatar-placeholder-01.jpg"></a>
+    
+      <a href="#" class="logo">MatchFlix</a>
+      <nav>
+        <ul>
+          <li><a href="#" routerLink="/pro">Upgrade to PRO</a></li>
+          <li><a href="#" routerLink="/about">About</a></li>
+        </ul>    
+      </nav>
+      
+    <a id="profile" href="#" routerLink="/profile"><img id="user-pic" src="https://aveurope.es/wp-content/uploads/2016/11/btx-avatar-placeholder-01.jpg"></a>
   </div>
 
-  <div class="sidelist">
+  <div class="sidelist"  routerLink="./group/" [routerLinkActive]="['outofview']">
     <app-groups-list></app-groups-list>
   </div>
 

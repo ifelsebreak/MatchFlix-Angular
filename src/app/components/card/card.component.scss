@@ -1,5 +1,49 @@
+@import '../../../styles.scss';
+
+#dislike-area, #like-area {
+    //background-color: chocolate;
+    
+    height: 80%;
+    width: 20%;
+    //display: flex;
+    position: absolute;
+    
+}
+#like-area {
+    z-index: 0;
+    top: 4rem;
+    right: 0px;
+    opacity: 0.5;
+    border: green dashed 0.5rem;
+}
+
+#dislike-area {
+    opacity: 0.5;
+    border: red dashed 0.5rem;
+}
+
+#front-card {
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+#close-icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 0.2rem;
+    font-size: 3rem;
+    color: lightgray;
+}
+
 @media only screen and (orientation: landscape)
 { 
+
+    #dislike-area {
+        z-index: 0;
+        top: 4rem;
+        left: 25%;
+    }
 
     #front-card {
         height: 55vh;
@@ -8,28 +52,47 @@
         background: white;
         box-shadow: gray 0px 3px 8px;
 
-        position: relative;
-        left: 30%;
-        right: 30%;
+        margin: 0 auto;
+        position: absolute;
+        left: 25%;
+        bottom: 0;
+        right: 0;
+                
         top: 12vh;
     }
 }
 
 @media only screen and (orientation: portrait)
 { 
+
+    #dislike-area {
+        z-index: 0;
+        top: 4rem;
+        left: 0px;
+    }
     
-    /*#front-card {
-        height: 75vh;
-        width: calc( 100% - 3em );
+    
+    #front-card {
+        height: 145vw;
+        width: 98vw;
+        max-height: 83vh;
+        max-width: 55vh;
         border-radius: 12px;
         background: white;
         box-shadow: gray 0px 3px 8px;
+        margin: 0 auto;
         position: absolute;
-        left: 1.5em;
-        top: 10vh;   
-    }*/
+        left: 0;
+        bottom: 0;
+        right: 0;
+                
+        top: 4.5rem;
+        // transform: translate(-50.1%, -51%);
+        display: flex;
+        flex-shrink: 1 
+    }
 
-    #front-card {
+    /*#front-card {
         border-radius: 12px;
         background: white;
         box-shadow: gray 0px 3px 8px;
@@ -38,16 +101,16 @@
         top: 4.5rem; 
 
         width: 94%;
-        /* whatever width you want */
-        display: inline-block;
-        
+ ;
     }
+
     #front-card:after {
         padding-top: 170%;
-        /* 16:9 ratio */
         display: block;
         content: '';
-    }
+        
+
+    }*/
 
 }
 

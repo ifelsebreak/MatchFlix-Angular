@@ -18,6 +18,11 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DeckComponent } from './components/deck/deck.component';
 import { MembersListEntryComponent } from './components/users/members-list-entry/members-list-entry.component';
 import { DesktopHomeComponent } from './desktop-home/desktop-home.component';
+import { CardDraggingDirective } from './directives/card-dragging.directive';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { LikeComponent } from './components/cards/tags/like/like.component';
+import { DislikeComponent } from './components/cards/tags/dislike/dislike.component';
+
 
 
 @NgModule({
@@ -31,6 +36,10 @@ import { DesktopHomeComponent } from './desktop-home/desktop-home.component';
     DeckComponent,
     MembersListEntryComponent,
     DesktopHomeComponent,
+    CardDraggingDirective,
+    LikeComponent,
+    DislikeComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,8 @@ import { DesktopHomeComponent } from './desktop-home/desktop-home.component';
     MatSliderModule,
     MatIconModule,
     MatChipsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

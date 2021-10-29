@@ -1,0 +1,26 @@
+@import '../../../../../styles.scss';
+
+#tag-border {
+    position: absolute;
+    top: 5rem;
+    left: 3rem;
+    outline: $greenA200 solid 0.6rem;
+    outline-offset: 1rem;
+    border-radius: 0.05rem;
+    align-content: center;
+    display: table-cell;
+    vertical-align: middle;
+    transform: rotate(-20deg) scale(85%);
+    //transform: ;
+}
+
+#tag-text {
+    //padding: 2rem 1rem;
+    padding-top: 0.5rem;
+
+    text-align: center;
+    color: $greenA200;
+    font-size: 3rem;
+    font-weight: bold;
+    
+}
