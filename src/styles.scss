@@ -14,8 +14,16 @@ $orange500: #FF9800;
 $amber800: #FF8F00;
 $lightgreen500: #8BC34A;
 $greenA200: #69F0AE;
+$purpleA200: #E040FB;
+$lightblueA200: #40C4FF;
 
+.sidelist {
+  z-index: 10;
+}
 
+#filters-icon, #groups-icon {
+  font-size: 2rem;
+}
 
 @media only screen and (orientation: landscape)
 {
@@ -143,7 +151,7 @@ $greenA200: #69F0AE;
   .deck-area {
     grid-area: deck-area;
     overflow-y: scroll;
-    overflow-x: hidden;;
+    //overflow-x: hidden;;
     //dispy: flex;
     //justify-content: center;
     //height: 100%;
@@ -198,7 +206,7 @@ $greenA200: #69F0AE;
   }
   
   .header {
-    z-index: 10;
+    z-index: 20;
     //background: white; /* fallback for old browsers */
     grid-area: header;
     //grid-column: span 2;
@@ -207,19 +215,26 @@ $greenA200: #69F0AE;
     background-image: linear-gradient(80rad, $primary 0%, #f9b923 100%);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
     color: white;
-    padding: 1.5rem; // altezza header
+    padding: 1rem; // altezza header
 
     .logo {
         float: left;
     }
 
+    .header-icons, #profile {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header-icons {}
+
     #profile {
-      float: right;
-      margin-top: -1rem;
-      margin-right: -1rem;
-      &:hover {
-        text-shadow:black 0px 0px 5px;
-      }
+      //float: right;
+      margin-top: -0.5rem;
+      //margin-right: -1rem;
+      //&:hover {
+      //  text-shadow:black 0px 0px 5px;
+      //}
     } 
 
     #user-pic {
@@ -266,12 +281,12 @@ $greenA200: #69F0AE;
 
   .sidelist {
     grid-area: sidelist;
-    //z-index: -1;
+    z-index: 10;
     width: 100%;
     //height: 100%;
     background: white;
     position: absolute;
-    top: 4.5rem;
+    top: 4rem;
     border-right: 1px solid grayscale($color: #eeeeee);
     //overflow: scroll;
     //position: absolute;
@@ -281,6 +296,10 @@ $greenA200: #69F0AE;
   .outofview {
     position: absolute;
     left: -2000px;
+  }
+  .inview {
+    position: absolute;
+    left: 0px;
   }
 
   .deck-area {

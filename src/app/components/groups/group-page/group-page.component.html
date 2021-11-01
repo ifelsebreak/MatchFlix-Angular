@@ -1,6 +1,6 @@
 <div class="container">
     <div id="heading">
-        <h2>{{group.name}}</h2>
+        <h2>{{group.name}} {{group.id}}</h2>
         <div id="matchlist-button">
             <p>See matchlist</p>
             <span class="material-icons" id="matchlist-icon">library_add_check</span>
@@ -13,7 +13,7 @@
         </div>
     </div>
     <h3>Group settings</h3>
-    <a [routerLink]="['/group/' + group.id]"><span class="material-icons" id="close-icon">highlight_off</span></a>
+    <a [routerLink]="['./group/' + group.id]"><span class="material-icons" id="close-icon">highlight_off</span></a>
 
     <div class="movies-shows">
         <p>Content type</p>

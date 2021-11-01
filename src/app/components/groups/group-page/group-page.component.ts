@@ -1,11 +1,13 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute} from '@angular/router';
 import { Group } from '../../../models/group';
 import { GroupService } from '../../../services/group-service.service';
 import { User } from '../../../models/user';
 import { UserService} from '../../../services/users.service';
 import {CURRENT_USER} from '../../../repos/current-user';
 import { MatSliderModule } from '@angular/material/slider';
+import { group } from '@angular/animations';
+
 
 @Component({
   selector: 'app-group-page',
@@ -21,29 +23,26 @@ export class GroupPageComponent implements OnInit {
   currentUser: User = CURRENT_USER;
 
   constructor(
+    private router: Router,
     private _groupService: GroupService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
     ) { 
       this.activatedRoute.params.subscribe(params => {
         this.id = params['id'];
-        console.log(`This is group with ID ${this.id}`);
+        console.log(`I look for the group with ID ${this.id}`);
         });
+        this.getCurrentGroup(this.id);
       
       }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(routeParams => {
-      this.group = this._groupService.getGroup(routeParams.id);
+    
       console.log(`This is group ${this.group.name} with id ${this.group.id}`);
       
-    });
-  }
+    }
+  
   ngOnChanges(): void {
-    this.activatedRoute.params.subscribe(routeParams => {
-      this.group = this._groupService.getGroup(routeParams.id);
-      console.log(`This is group ${this.group.name}`);
-      
-    });
+
   }
 
 
@@ -62,6 +61,10 @@ export class GroupPageComponent implements OnInit {
     this.currentUser.favoriteGroup = 0;
   }
 
+  async getCurrentGroup(id: any) {
+    this.group = await this._groupService.getGroup(this.id);
+    console.log("I found this group:")
+    console.log(this.group);
+  }
   
-
 }

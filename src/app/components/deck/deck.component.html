@@ -1,22 +1,34 @@
-<div #dislikearea id="dislike-area" >
+<!--<div id="dislike-area" >
+
+</div>-->
+
+<div *ngIf="cards.length > 0; else elseBlock">
+    <app-card *ngFor="let movie of cards.reverse(); let i = index" [movie]="movie"></app-card>
+</div>
+<ng-template #elseBlock>
+    <div id="temporary-card" (click)="loadCards(1);">
+        <mat-spinner id="spinner" color="accent"></mat-spinner>
+    </div>
+</ng-template>
+
+
+
+
+
+<!--
+<div id="like-area" >
 
 </div>
+-->
 
 
-<app-card *ngFor="let card of cards.reverse(); let i = index" [index]="card"></app-card>
-
-
-<div #likearea id="like-area" >
-
-</div>
-
-
-
-<a id="settings-link" [routerLink]="['./settings']">
+<a id="settings-link" routerLink='./settings'>
     <p id="settings-text">Group settings</p>
     <span class="material-icons" id="settings-icon">settings</span>
 </a>
 
-<a id="like-link" [routerLink]="['./settings']">
+<a id="like-link" routerLink='./settings'>
     <span class="material-icons" id="like-icon">thumb_up</span>
 </a>
+
+<!-- [ngClass]="[movie['id'] == 1 ? 'front' : '']"-->

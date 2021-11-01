@@ -1,6 +1,19 @@
-<div class="grid-container">
+<div class="grid-container" (window:resize)="checkIfNeeded(); checkIfMobile()" (click)="checkIfNeeded(); checkIfMobile()">
   <div class="header">
     
+
+    <div *ngIf="isMobile == true; else elseBlock" class="header-icons">
+      
+      <a id="groups-link" routerLink='./groups'>
+        <span class="material-icons" id="groups-icon">groups</span>
+      </a>
+      <a id="filters-link" routerLink='./groups'>
+        <span class="material-icons" id="filters-icon">tune</span>
+      </a>
+      <a id="profile" href="#" routerLink="/profile"><img id="user-pic" src="https://aveurope.es/wp-content/uploads/2016/11/btx-avatar-placeholder-01.jpg"></a>
+    </div>
+
+    <ng-template #elseBlock>
       <a href="#" class="logo">MatchFlix</a>
       <nav>
         <ul>
@@ -8,15 +21,18 @@
           <li><a href="#" routerLink="/about">About</a></li>
         </ul>    
       </nav>
-      
-    <a id="profile" href="#" routerLink="/profile"><img id="user-pic" src="https://aveurope.es/wp-content/uploads/2016/11/btx-avatar-placeholder-01.jpg"></a>
+      <a id="profile" href="#" routerLink="/profile"><img id="user-pic" src="https://aveurope.es/wp-content/uploads/2016/11/btx-avatar-placeholder-01.jpg"></a>
+    </ng-template>
+
   </div>
 
-  <div class="sidelist"  routerLink="./group/" [routerLinkActive]="['outofview']">
-    <app-groups-list></app-groups-list>
-  </div>
+    <div class="sidelist" *ngIf="isNeeded">
+      <app-groups-list></app-groups-list>
+    </div>
 
-  <div class="deck-area">
-    <router-outlet></router-outlet>
-  </div>
+    <div class="deck-area">
+      <router-outlet></router-outlet>
+    </div>
+  
 </div>
+<!--  [routerLink]="['/']" RouterLinkActive="inview" -->

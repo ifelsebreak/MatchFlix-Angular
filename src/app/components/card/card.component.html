@@ -1,10 +1,15 @@
-<div #card class="card" id="front-card" cdkDrag (cdkDragMoved)="dragAndRotate($event)" (cdkDragEnded)="endedDrag($event)" [ngStyle]="{'background-image': 'url(' + posterPath + ')', 'object-fit':'scale-down'}">
-    <a [routerLink]="['/groups/']"><span class="material-icons" id="close-icon">highlight_off</span></a>
+<div #card class="card" id="front-card" cdkDrag (cdkDragMoved)="dragAndRotate($event)" (cdkDragEnded)="endedDrag($event)" (cdkDragReleased)="releasedDrag($event)">
+    <img id="poster">
+    <a [routerLink]="['']"><span class="material-icons" id="close-icon">highlight_off</span></a>
     <app-like #liketag></app-like>
+    <app-shout #shouttag></app-shout>
     <app-dislike #disliketag></app-dislike>
+    <app-save #savetag></app-save>
 
 </div>
 <!--
+ [src]="movie['poster_path']"
+
 [style.background-image]="'url(' + posterPath + ')'"
 
 (cdkDragReleased)="releasedDrag($event)"

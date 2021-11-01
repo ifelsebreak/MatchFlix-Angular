@@ -5,6 +5,7 @@ import { User } from 'src/app/models/user';
 import { UserService } from '../../../services/users.service';
 import { CURRENT_USER } from 'src/app/repos/current-user';
 import { group } from '@angular/animations';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class GroupsListEntryComponent implements OnInit {
 
   constructor(
     private _groupService: GroupService,
-    private _userService: UserService
+    private _userService: UserService,
+    //private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -47,6 +49,13 @@ export class GroupsListEntryComponent implements OnInit {
     //this.currentlyActive = target;
     
   }
+
+  /*toGroupDeck(id : number){
+    console.log("The group this list entry takes to:");
+    console.log(id);
+    this.router.navigate(['/group', this.group.id]);
+
+  }*/
 
   ngOnChanges(): void {
 

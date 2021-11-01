@@ -1,30 +1,15 @@
 @import '../../../styles.scss';
 
-#dislike-area, #like-area {
-    //background-color: chocolate;
-    
-    height: 80%;
-    width: 20%;
-    //display: flex;
-    position: absolute;
-    
-}
-#like-area {
-    z-index: 0;
-    top: 4rem;
-    right: 0px;
-    opacity: 0.5;
-    border: green dashed 0.5rem;
-}
-
-#dislike-area {
-    opacity: 0.5;
-    border: red dashed 0.5rem;
-}
-
 #front-card {
     z-index: 1;
-    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+
+#poster {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 #close-icon {
@@ -38,13 +23,6 @@
 
 @media only screen and (orientation: landscape)
 { 
-
-    #dislike-area {
-        z-index: 0;
-        top: 4rem;
-        left: 25%;
-    }
-
     #front-card {
         height: 55vh;
         width: 33vh;
@@ -58,20 +36,12 @@
         bottom: 0;
         right: 0;
                 
-        top: 12vh;
+        top: calc( 4.5rem + 12vh );
     }
 }
 
 @media only screen and (orientation: portrait)
 { 
-
-    #dislike-area {
-        z-index: 0;
-        top: 4rem;
-        left: 0px;
-    }
-    
-    
     #front-card {
         height: 145vw;
         width: 98vw;

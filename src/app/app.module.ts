@@ -1,5 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +19,7 @@ import { GroupPageComponent } from './components/groups/group-page/group-page.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -22,6 +30,28 @@ import { CardDraggingDirective } from './directives/card-dragging.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LikeComponent } from './components/cards/tags/like/like.component';
 import { DislikeComponent } from './components/cards/tags/dislike/dislike.component';
+import { ShoutComponent } from './components/cards/tags/shout/shout.component';
+import { SaveComponent } from './components/cards/tags/save/save.component';
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDVloO-Ux712CvNELxyIT6PE7Yp1ABYld4",
+
+  authDomain: "matchflix-c4607.firebaseapp.com",
+
+  databaseURL: "https://matchflix-c4607-default-rtdb.firebaseio.com",
+
+  projectId: "matchflix-c4607",
+
+  storageBucket: "matchflix-c4607.appspot.com",
+
+  messagingSenderId: "165157065036",
+
+  appId: "1:165157065036:web:63d27aa3f681c7a0f1ffe9",
+
+  measurementId: "G-3MLD304WBT"
+
+};
 
 
 
@@ -39,10 +69,13 @@ import { DislikeComponent } from './components/cards/tags/dislike/dislike.compon
     CardDraggingDirective,
     LikeComponent,
     DislikeComponent,
+    ShoutComponent,
+    SaveComponent,
     
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -50,11 +83,17 @@ import { DislikeComponent } from './components/cards/tags/dislike/dislike.compon
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerImmediately' // 'registerWhenStable:30000'
     }),
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule, // firestore
+    AngularFireAuthModule, // auth
+    AngularFireStorageModule, // storage
     BrowserAnimationsModule,
     MatSliderModule,
     MatIconModule,
     MatChipsModule,
     MatSlideToggleModule,
+    MatProgressSpinnerModule,
     DragDropModule,
   ],
   providers: [],

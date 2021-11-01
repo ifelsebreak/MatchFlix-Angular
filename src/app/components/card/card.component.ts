@@ -1,33 +1,20 @@
 import { Component, OnInit, Input, ElementRef, ViewChild } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  // ...
-} from '@angular/animations';
-import { Observable } from "rxjs";
-import { LikeComponent } from '../cards/tags/like/like.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import Spring from 'tiny-spring'; 
-
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
- 
-//[ngStyle]="{ 'transform': 'rotate( xPos deg)' }"
-
 
 export class CardComponent implements OnInit {
-  @Input() index: number = -1;
+  @Input() movie: object = {};
+  @Input() index: any;
   @ViewChild('card', {read: ElementRef })  cardElement: any
   @ViewChild('liketag', {read: ElementRef })  likeTagElement: any
   @ViewChild('disliketag', {read: ElementRef })  dislikeTagElement: any
-  posterPath: string = 'https://image.tmdb.org/t/p/w500//ekZobS8isE6mA53RAiGDG93hBxL.jpg';
+  @ViewChild('shouttag', {read: ElementRef })  shoutTagElement: any
+  @ViewChild('savetag', {read: ElementRef })  saveTagElement: any
+
 
   constructor() {}
 
@@ -39,14 +26,14 @@ export class CardComponent implements OnInit {
   ngAfterViewInit() {
     console.log("afterinit");
     setTimeout(() => {
-      console.log(`Posizione di Card: ${this.cardElement.nativeElement}`);
-      console.log(this.cardElement.nativeElement.offsetLeft);
-      console.log("BEFORE");
+      console.log(`Gli elementi Card: ${this.cardElement.nativeElement}`);
       console.log(this.cardElement.nativeElement);
     }, 1000);
 
     this.likeTagElement.nativeElement.style.opacity = 0.0; // imposto l'opacità iniziale delle esclamazioni su zero
     this.dislikeTagElement.nativeElement.style.opacity = 0.0;
+    this.shoutTagElement.nativeElement.style.opacity = 0.0;
+    this.saveTagElement.nativeElement.style.opacity = 0.0;
   }
 
   onChanges() {
@@ -54,19 +41,70 @@ export class CardComponent implements OnInit {
     console.log(this.cardElement.nativeElement);
   }
 
-  dragAndRotate(e: any) {
-    console.log(e);
+  dragAndRotate(e: any) { // Evento sctenato mentre il dito/click è premuto
+    console.log("Distanza X:");
+    console.log(e.distance.x);
+    console.log("Distanza Y:");
+    console.log(e.distance.y);
+    console.log("Altezza carta:");
+    console.log(this.cardElement.nativeElement.clientHeight);
+    console.log("Trigger:");
+    console.log(-(this.cardElement.nativeElement.clientHeight / 5));
     this.cardElement.nativeElement.style.transform = `rotate(${-(e.distance.x / 15)}deg) translate(${(e.distance.x)}px, ${e.distance.y * 1.3}px)`;
     this.likeTagElement.nativeElement.style.opacity = e.distance.x / 150;
     this.dislikeTagElement.nativeElement.style.opacity = -e.distance.x / 150;
+    if (e.distance.x < 80 && e.distance.x > -80) {this.shoutTagElement.nativeElement.style.opacity = -e.distance.y / 250} else {this.shoutTagElement.nativeElement.style.opacity = 0};
+    if (e.distance.x < 80 && e.distance.x > -80) {this.saveTagElement.nativeElement.style.opacity = e.distance.y / 250} else {this.saveTagElement.nativeElement.style.opacity = 0};
   }
 
-  endedDrag(event: any) {
-    console.log("evento fine:");
-    console.log(event);
-    console.log(event.dropPoint.x);
+  releasedDrag(event: any) { // Evento scatenato nell'istante in cui l'utente rimuove il dito/click, prima di qualsiasi animazione
+    console.log("evento release");
+    
+    this.cardElement.nativeElement.setAttribute('style', 'transition: transform 0.4s ease'); // imposto lo stile per un'animazione di ritorno fluida
+    this.likeTagElement.nativeElement.setAttribute('style', 'transition: opacity 0.4s ease');
+    this.dislikeTagElement.nativeElement.setAttribute('style', 'transition: opacity 0.4s ease');
+    this.shoutTagElement.nativeElement.setAttribute('style', 'transition: opacity 0.4s ease');
+    this.saveTagElement.nativeElement.setAttribute('style', 'transition: opacity 0.4s ease');
+    
+    setTimeout(() => {
+      this.cardElement.nativeElement.setAttribute('style', 'transition: ') // // una volta terminata, rimuovo lo stile per l'animazione
+      this.likeTagElement.nativeElement.setAttribute('style', 'opacity: 0');
+      this.dislikeTagElement.nativeElement.setAttribute('style', 'opacity: 0');
+      this.shoutTagElement.nativeElement.setAttribute('style', 'opacity: 0');
+      this.saveTagElement.nativeElement.setAttribute('style', 'opacity: 0');
+    }, 400);
+  }
+
+  endedDrag(event: any) { // Evento scatenato dopo l'evento release, qui faccio partire le animazioni
+    console.log("evento fine:");   
     //console.log(event.source.getFreeDragPosition());
-    this.cardElement.nativeElement.style.transform = `translate(0, 0)`;
+    if (event.distance.x > this.cardElement.nativeElement.clientWidth / 2) { // LIKE
+      this.cardElement.nativeElement.style.transform = `translate(2000px, ${event.distance.y * 10}px)`; // sposto la Card fuori visuale con un'animazione
+      setTimeout(() => {
+        this.cardElement.nativeElement.remove(); // aspetto che l'animazione sia terminata e distruggo la card
+      }, 400);
+    } else if (event.distance.x < -(this.cardElement.nativeElement.clientWidth / 2)) { // DISLIKE
+      this.cardElement.nativeElement.style.transform = `translate(-2000px, ${event.distance.y * 10}px)`; // sposto la Card fuori visuale con un'animazione
+      setTimeout(() => {
+        this.cardElement.nativeElement.remove(); // aspetto che l'animazione sia terminata e distruggo la card
+      }, 400);
+    } else if (event.distance.y < -(this.cardElement.nativeElement.clientHeight / 5)) { // SHOUT
+      this.cardElement.nativeElement.style.transform = `translate(0px, -2000px)`; // sposto la Card fuori visuale con un'animazione
+      setTimeout(() => {
+        this.cardElement.nativeElement.remove(); // aspetto che l'animazione sia terminata e distruggo la card
+      }, 400);
+    } else if (event.distance.y > this.cardElement.nativeElement.clientHeight / 5) { // SAVE
+      this.cardElement.nativeElement.style.transform = `translate(0px, 2000px)`; // sposto la Card fuori visuale con un'animazione
+      setTimeout(() => {
+        this.cardElement.nativeElement.remove(); // aspetto che l'animazione sia terminata e distruggo la card
+      }, 400);
+    } else {
+      this.cardElement.nativeElement.style.transform = `translate(0, 0)`;
+      this.likeTagElement.nativeElement.style.opacity = `0`;
+      this.dislikeTagElement.nativeElement.style.opacity = `0`;
+      this.shoutTagElement.nativeElement.style.opacity = `0`;
+    }
+    
     //this.cardElement.nativeElement.style.transition = `translate(0, 0) 300 ease-out 0`;
     /*this.cardElement.nativeElement.animate(
       [
@@ -80,33 +118,8 @@ export class CardComponent implements OnInit {
         fill: "both",
         easing :'ease-out'
       }
-    );*/
-    //this.cardElement.nativeElement.classList.remove('style');
-  }
-
-  /*releasedDrag(event: any) {
-    console.log("evento release");
-    console.log(event);
-    console.log(event.source._dragRef._activeTransform);
-    let endPosX: number = event.source._dragRef._activeTransform.x;
-    let endPosY: number = event.source._dragRef._activeTransform.y;
-    this.cardElement.nativeElement.animate(
-      [
-        {transform: `translate(${endPosX}, ${endPosY})`},
-        {transform: "translate(0, 0)"},
-        
-      ], 
-      {
-        duration: 300,
-        delay: 0,
-        fill: "both",
-        easing :'ease-out'
-      }
     );
-
-    console.log("AFTER");
-    console.log(this.cardElement.nativeElement); //.remove('style');
-    this.cardElement.nativeElement.removeAttribute('style');
-  }*/
+    //this.cardElement.nativeElement.classList.remove('style');*/
+  }
 
 }

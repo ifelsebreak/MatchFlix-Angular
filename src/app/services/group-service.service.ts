@@ -12,8 +12,12 @@ export class GroupService {
   getGroups(): Group[] {
     return GROUPS;
   }
-  getGroup(id: number): Group {
-    return GROUPS.find(element => element.id = id)!;
+  getGroup(id: any): Group {
+    console.log(typeof(id));
+    console.log("Found group:");
+    console.log(GROUPS.find(element => element.id === Number(id)));
+    return GROUPS.find(element => element.id === id)!;
+    
   }
 
   addGroup(newItem: Group): void {
