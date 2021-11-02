@@ -103,6 +103,7 @@ export class CardComponent implements OnInit {
       this.likeTagElement.nativeElement.style.opacity = `0`;
       this.dislikeTagElement.nativeElement.style.opacity = `0`;
       this.shoutTagElement.nativeElement.style.opacity = `0`;
+      this.saveTagElement.nativeElement.style.opacity = `0`;
     }
     
     //this.cardElement.nativeElement.style.transition = `translate(0, 0) 300 ease-out 0`;

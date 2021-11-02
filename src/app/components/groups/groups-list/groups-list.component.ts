@@ -13,7 +13,7 @@ import { map, catchError } from 'rxjs/operators';
 export class GroupsListComponent implements OnInit {
 
   //groups: Group[] = [];
-  //group: any;//Group = {id: 999999999, name: '', pic: '', members: [], admin: 0, minApprove: 2, movies: true, shows: false, genres: [], matches: []};
+  group: any;//Group = {id: 999999999, name: '', pic: '', members: [], admin: 0, minApprove: 2, movies: true, shows: false, genres: [], matches: []};
   //groups: Observable<any>;
 
   private groupsCollection: AngularFirestoreCollection<Group>;

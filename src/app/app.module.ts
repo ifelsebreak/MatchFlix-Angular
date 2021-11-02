@@ -8,7 +8,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { AuthService } from './services/auth.service';
+
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -19,37 +22,41 @@ import { GroupPageComponent } from './components/groups/group-page/group-page.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatIconModule } from '@angular/material/icon';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'; 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
 import { MatChipsModule } from '@angular/material/chips';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DeckComponent } from './components/deck/deck.component';
 import { MembersListEntryComponent } from './components/users/members-list-entry/members-list-entry.component';
-import { DesktopHomeComponent } from './desktop-home/desktop-home.component';
 import { CardDraggingDirective } from './directives/card-dragging.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LikeComponent } from './components/cards/tags/like/like.component';
 import { DislikeComponent } from './components/cards/tags/dislike/dislike.component';
 import { ShoutComponent } from './components/cards/tags/shout/shout.component';
 import { SaveComponent } from './components/cards/tags/save/save.component';
+import { LoginPageComponent } from './components/auth/login-page/login-page.component';
+import { SignupPageComponent } from './components/auth/signup-page/signup-page.component';
+import { PublicPageComponent } from './components/auth/public-page/public-page.component';
+import { EmailComponent } from './components/auth/email/email.component';
+import { ProfileComponent } from './components/auth/profile/profile.component';
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDVloO-Ux712CvNELxyIT6PE7Yp1ABYld4",
+  apiKey: "AIzaSyDJQ3kK6281DPC7dycqEnYpU6v4_3L7PJw",// "AIzaSyDVloO-Ux712CvNELxyIT6PE7Yp1ABYld4",
 
-  authDomain: "matchflix-c4607.firebaseapp.com",
+  authDomain: "matchflix-4358a.firebaseapp.com ",
 
-  databaseURL: "https://matchflix-c4607-default-rtdb.firebaseio.com",
+  databaseURL: "matchflix-4358a-default-rtdb.firebaseio.com",
 
-  projectId: "matchflix-c4607",
+  storageBucket: "matchflix-4358a.appspot.com",
 
-  storageBucket: "matchflix-c4607.appspot.com",
+  messagingSenderId: "265104895390",
 
-  messagingSenderId: "165157065036",
+  appId: "1:265104895390:web:1765feb53b11047ab8ba8f",
 
-  appId: "1:165157065036:web:63d27aa3f681c7a0f1ffe9",
+  measurementId: "G-ET6FX8V4CB",
 
-  measurementId: "G-3MLD304WBT"
+  projectId: "matchflix-4358a"
 
 };
 
@@ -65,18 +72,23 @@ const firebaseConfig = {
     WelcomeComponent,
     DeckComponent,
     MembersListEntryComponent,
-    DesktopHomeComponent,
     CardDraggingDirective,
     LikeComponent,
     DislikeComponent,
     ShoutComponent,
     SaveComponent,
+    LoginPageComponent,
+    SignupPageComponent,
+    PublicPageComponent,
+    EmailComponent,
+    ProfileComponent,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       // Register the ServiceWorker as soon as the app is stable
@@ -96,7 +108,7 @@ const firebaseConfig = {
     MatProgressSpinnerModule,
     DragDropModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -43,10 +43,12 @@
 @media only screen and (orientation: portrait)
 { 
     #front-card {
-        height: 145vw;
-        width: 98vw;
-        max-height: 83vh;
+        height:  175vw;
+        width: 96vw;
+        max-height: calc( 98% - 4.5rem );// 83vh;
+        min-height: 17rem;
         max-width: 55vh;
+        min-width: 10rem;
         border-radius: 12px;
         background: white;
         box-shadow: gray 0px 3px 8px;
@@ -84,3 +86,10 @@
 
 }
 
+@media only screen and (max-height: 700px)
+{ 
+    #front-card {
+        //max-height: 70vh;
+    }
+   
+}
