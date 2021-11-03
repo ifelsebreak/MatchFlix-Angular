@@ -9,6 +9,7 @@
     //display: flex;
     position: absolute;
 }
+
 #like-area {
     z-index: 0;
     top: 4rem;
@@ -21,8 +22,6 @@
     opacity: 0.5;
     border: red dashed 0.5rem;
 }
-
-
 
 a {text-decoration: none;}
 
@@ -43,23 +42,6 @@ a {text-decoration: none;}
     padding-top: 0.4rem;
 }
 
-#like-link {
-    background-color: $greenA200;
-    border: none;
-    border-radius: 50%;
-    color: white;
-    width: 4rem;
-    height: 4rem;
-    margin: 1vh;
-    padding: 0.5rem;
-    display: flex;
-    box-shadow: gray 0px 0px 8px;
-}
-#like-icon {
-    text-align: center;
-    font-size: 3rem;
-}
-
 #spinner {
     margin: 23vh auto;
 }
@@ -67,20 +49,6 @@ a {text-decoration: none;}
 @media only screen and (orientation: landscape)
 
 {
-    #like-link {
-        position: fixed;
-        bottom: 0px;
-        left: 25%;
-    }
-
-    #dislike-area {
-        z-index: 0;
-        top: 4rem;
-        left: 25%;
-    }
-
-
-
     #temporary-card {
         height: 55vh;
         width: 33vh;

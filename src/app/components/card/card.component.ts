@@ -123,4 +123,24 @@ export class CardComponent implements OnInit {
     //this.cardElement.nativeElement.classList.remove('style');*/
   }
 
+  like() {
+
+  }
+
+  dislike() {
+
+  }
+
+  shout() {
+
+  }
+
+  save() {
+
+  }
+
+  undo() {
+    
+  }
+
 }

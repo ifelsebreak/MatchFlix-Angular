@@ -2,12 +2,13 @@
 
 #tag-border {
     position: absolute;
-    bottom: 5rem;
-    width: 70%;
-    left: 15%;
-    outline: $purpleA200 solid 0.6rem;
-    outline-offset: 1rem;
-    border-radius: 0.05rem;
+    bottom: 8rem;
+    width: 50%;
+    left: 25%;
+    //outline: $purpleA200 solid 0.6rem;
+    //outline-offset: 1rem;
+    border: $purpleA200 solid 0.6rem;
+    border-radius: 1rem;
     align-content: center;
     display: flexbox;
     vertical-align: middle;
@@ -20,7 +21,10 @@
 #tag-text, #megaphone-icon {
     display: inline-flex;
     //padding: 2rem 1rem;
-    padding-top: 0.7rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     text-align: center;
     color: $purpleA200;
     font-size: 2.5rem;

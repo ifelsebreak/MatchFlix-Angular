@@ -3,6 +3,7 @@
 #front-card {
     z-index: 1;
     overflow: hidden;
+    display: flex;
 }
 
 #poster {
@@ -20,6 +21,81 @@
     font-size: 3rem;
     color: lightgray;
 }
+
+#buttons {
+    position: absolute;
+    bottom: 3vw;
+    width: 80%;
+    margin-left: 6%;
+    display: flex;
+    justify-content: space-between;
+    //margin: auto;
+    //left: 1vw;
+    //max-width: 100%;
+    //margin-left: 50%;
+    //height: 4rem;
+    
+}
+
+#like-link, #dislike-link, #save-link, #shout-link, #undo-link {
+    //margin: 0px 1%;
+    flex-wrap: wrap;
+    
+}
+
+#like-link {  // PERCHE` C'E` BISOGNO DI QUESTO????? NON CAPISCO!
+    margin-right: 3.5vw;
+}
+
+#like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {
+    /*display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: auto;*/
+    border-radius: 50%;
+    //box-shadow: 0px 0px 2px $greenA200;
+    font-size: 5vw; // Font size aumenta con l'aumentare della larghezza della card
+    font-size: 1rem; 
+    margin: 3%;
+    padding: 55%;
+    text-size-adjust: none;
+}
+
+@media screen and (min-width: 450px) {
+    #like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {
+       font-size: 2rem; // ma non oltre questa misura
+    }
+  }
+
+#like-icon {
+    color: $greenA200;
+    border: $greenA200 solid 4px;
+}
+
+#dislike-icon {
+    color: $redA200;
+    border: $redA200 solid 4px;
+}
+
+#undo-icon {
+    color: lightgray;
+    border: lightgray solid 4px;
+    //margin-left: 55%;
+    padding: 25%;
+}
+
+#shout-icon {
+    color: $purpleA200;
+    border: $purpleA200 solid 4px;
+    padding: 25%;
+}
+
+#save-icon {
+    color: $lightblueA200;
+    border: $lightblueA200 solid 4px;
+    padding: 25%;
+}
+
 
 @media only screen and (orientation: landscape)
 { 

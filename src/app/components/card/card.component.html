@@ -6,6 +6,23 @@
     <app-dislike #disliketag></app-dislike>
     <app-save #savetag></app-save>
 
+    <div id="buttons">
+        <a id="like-link" (click)="like()">
+            <span class="material-icons" id="like-icon">thumb_up</span>
+        </a>
+        <a id="undo-link" (click)="undo()">
+            <span class="material-icons"  id="undo-icon">replay</span>
+        </a>
+        <a id="save-link" (click)="save()">
+            <span class="material-icons" id="save-icon">save_alt</span>
+        </a>
+        <a id="shout-link" (click)="shout()">
+            <span class="material-icons" id="shout-icon">campaign</span>
+        </a>
+        <a id="dislike-link" (click)="dislike()">
+            <span class="material-icons" id="dislike-icon">thumb_down</span>
+        </a>
+    </div>
 </div>
 <!--
  [src]="movie['poster_path']"
