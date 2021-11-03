@@ -26,7 +26,7 @@ const routes: Routes = [
   //{ path: '', redirectTo: 'group/' + CURRENT_USER.favoriteGroup, pathMatch: 'full' },
   { path: 'group/:id/settings', component: GroupPageComponent },
   { path: 'group/:id', component: DeckComponent },
-  { path: 'groups/', component: WelcomeComponent },
+  { path: 'groups/', component: WelcomeComponent, pathMatch: 'full' },
   { path: '', component: WelcomeComponent},
   { path: 'login', component: LoginPageComponent },
   { path: 'email-login', component: EmailComponent },

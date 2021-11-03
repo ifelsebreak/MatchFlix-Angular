@@ -3,11 +3,11 @@
 #front-card {
     z-index: 1;
     overflow: hidden;
-    display: flex;
+    //display: flex;
 }
 
 #poster {
-    display: block;
+    //display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -22,13 +22,87 @@
     color: lightgray;
 }
 
+
+
+
+
 #buttons {
     position: absolute;
-    bottom: 3vw;
+    bottom: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+#like-link {
+    margin-right: 5%;
+}
+
+#save-link, #shout-link, #undo-link {
+    margin: 0 2%;
+
+}
+
+#dislike-link {
+    margin-left: 5%;
+}
+
+#like-icon {
+    color: $greenA200;
+    border: $greenA200 solid 4px;
+    border-radius: 50%;
+    padding: 3%;
+    font-size: 7vw
+}
+
+
+#undo-icon {
+    color: lightgray;
+    border: lightgray solid 4px;
+    border-radius: 50%;
+    //margin-left: 55%;
+    padding: 1%;
+    font-size: 4vw;
+}
+
+#save-icon {
+    color: $lightblueA200;
+    border: $lightblueA200 solid 4px;
+    border-radius: 50%;
+    padding: 1%;
+    font-size: 4vw;
+}
+
+#shout-icon {
+    color: $purpleA200;
+    border: $purpleA200 solid 4px;
+    border-radius: 50%;
+    padding: 1%;
+    font-size: 4vw;
+}
+
+#dislike-icon {
+    color: $redA200;
+    border: $redA200 solid 4px;
+    border-radius: 50%;
+    padding: 3%;
+    font-size: 7vw;
+}
+
+@media screen and (min-width: 450px) {
+    #like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {
+       font-size: 1rem; // ma non oltre questa misura
+    }
+  }
+/*
+#buttons {
+    position: absolute;
+    bottom: 3%;
     width: 80%;
-    margin-left: 6%;
+    margin-left: 50%;
+    transform: translate( -50%, 0px);
+    justify-content: center;
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
     //margin: auto;
     //left: 1vw;
     //max-width: 100%;
@@ -39,32 +113,46 @@
 
 #like-link, #dislike-link, #save-link, #shout-link, #undo-link {
     //margin: 0px 1%;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
+    display: inline-flex;
+    flex-wrap: nowrap;
+
     
 }
 
 #like-link {  // PERCHE` C'E` BISOGNO DI QUESTO????? NON CAPISCO!
-    margin-right: 3.5vw;
+    margin-right: 8%;
+    margin-top: auto;
+    margin-left: -13%;
 }
 
-#like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {
+#save-link, #shout-link, #undo-link {
+    margin: 2% 4%;
+    height:
+}
+
+#dislike-link {  // PERCHE` C'E` BISOGNO DI QUESTO????? NON CAPISCO!
+    margin-left: 4%;
+    margin-top: auto;
+}
+
+#like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {*/
     /*display: flex;
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: auto;*/
-    border-radius: 50%;
+    /*border-radius: 50%;
     //box-shadow: 0px 0px 2px $greenA200;
     font-size: 5vw; // Font size aumenta con l'aumentare della larghezza della card
-    font-size: 1rem; 
+    //font-size: 1rem; 
     margin: 3%;
     padding: 55%;
-    text-size-: none;
     
 }
 
 @media screen and (min-width: 450px) {
     #like-icon, #dislike-icon, #save-icon, #shout-icon, #undo-icon {
-       font-size: 2rem; // ma non oltre questa misura
+       font-size: 1rem; // ma non oltre questa misura
     }
   }
 
@@ -96,7 +184,7 @@
     border: $lightblueA200 solid 4px;
     padding: 25%;
 }
-
+*/
 
 @media only screen and (orientation: landscape)
 { 
@@ -137,8 +225,8 @@
                 
         top: 4.5rem;
         // transform: translate(-50.1%, -51%);
-        display: flex;
-        flex-shrink: 1 
+        //display: flex;
+        //flex-shrink: 1 
     }
 
     /*#front-card {
