@@ -42,21 +42,21 @@ import { ProfileComponent } from './components/auth/profile/profile.component';
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyDJQ3kK6281DPC7dycqEnYpU6v4_3L7PJw",// "AIzaSyDVloO-Ux712CvNELxyIT6PE7Yp1ABYld4",
+  apiKey: "PUT YOUR OWN FIREBASE API KEY HERE",// "AIzaSyDVloO-Ux712CvNELxyIT6PE7Yp1ABYld4",
 
-  authDomain: "matchflix-4358a.firebaseapp.com ",
+  authDomain: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  databaseURL: "matchflix-4358a-default-rtdb.firebaseio.com",
+  databaseURL: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  storageBucket: "matchflix-4358a.appspot.com",
+  storageBucket: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  messagingSenderId: "265104895390",
+  messagingSenderId: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  appId: "1:265104895390:web:1765feb53b11047ab8ba8f",
+  appId: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  measurementId: "G-ET6FX8V4CB",
+  measurementId: "PUT YOUR FIREBASE APP DETAILS HERE",
 
-  projectId: "matchflix-4358a"
+  projectId: "PUT YOUR FIREBASE APP DETAILS HERE"
 
 };
 
