@@ -1,5 +1,13 @@
 <div class="form-container">
     <button (click)="loginGoogle()" class="google">Login or Signup With Google</button>
+
+    <div (click)="loginGoogle()" class="google-btn">
+      <div class="google-icon-wrapper">
+        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+      </div>
+      <p class="btn-text"><b>Sign in with google</b></p>
+    </div>
+
     <button routerLink="/email-login" class="email">Email</button>
     <a routerLink="/signup" routerLinkActive="active" class="create-account-txt">No account? <strong>Create one here</strong></a>
   </div>

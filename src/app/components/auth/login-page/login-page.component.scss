@@ -62,3 +62,48 @@ input.input-txt {
     width: 90%;
     margin-bottom: 1em;
 }
+
+$white: #fff;
+$google-blue: #4285f4;
+$button-active-blue: #1669F2;
+
+.google-btn {
+  width: 100%;
+  height: 42px;
+  margin-bottom: 15px;
+  font-size: 1.3em;
+  background-color: $google-blue;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 10%;
+    height: 40px;
+    border-radius: 2px;
+    background-color: $white;
+    
+  }
+  .google-icon {
+    display: table-cell;
+    position: relative;
+    //margin-top: 12%;
+    margin: auto;
+    width: 1.3em;
+    height: 1.3em;
+  }
+  .btn-text {
+    color: $white;
+    padding: 0.5em 1em;
+    font-size: 1.3em;
+    width: 90%;
+    margin-bottom: 1em;
+  }
+  &:hover {
+    box-shadow: 0 0 6px $google-blue;
+  }
+  &:active {
+    background: $button-active-blue;
+  }
+}
