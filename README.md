@@ -1,27 +1,20 @@
 # MatchFlix
+![Platform](http://img.shields.io/badge/platform-android-blue.svg?style=flat)
+![License](https://img.shields.io/github/license/ifelsebreak/MatchFlix)
+![Language](https://img.shields.io/badge/language-Dart-blue)
+![Toolkit](https://img.shields.io/badge/toolkit-Flutter-brightgreen)
+![API](https://img.shields.io/badge/API-themoviedb.org-red)
+![Backend](https://img.shields.io/badge/Backend-FireBase-yellow)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+## Overview
 
-## Development server
+![Overview](https://github.com/ifelsebreak/MatchFlix-Angular/blob/master/src/assets/MatchFlix-%E2%80%93-Mozilla-Firefox-2021-12-17-12-39-33.gif?raw=true)
+Angular remake of my previous [repository](https://github.com/ifelsebreak/MatchFlix-flutter). See that for more details.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Made with Angular 12 and TypeScript, uses [themoviedb.org](http://themoviedb.org) API for movie data. Basic FireBase implementation.
 
-## Code scaffolding
+## DISCLAIMER
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- The app takes the data from the themoviedb.org API: you must sign up on their website and get your own API key and set it as the value of the "tmdbAPIkey" variable in /lib/movie-list.dart.
+- You need to set up your FireBase accont and link it to your flutter project through the google-services.json file provided by Google.
+- Tested on android (Chrome + Firefox), Windows and Linux (Chrome + Firefox) and iPad (Safari)
