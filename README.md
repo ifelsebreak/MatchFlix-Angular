@@ -9,8 +9,7 @@
 ## Overview
 
 ![Overview](https://github.com/ifelsebreak/MatchFlix-Angular/blob/master/src/assets/MatchFlix-%E2%80%93-Mozilla-Firefox-2021-12-17-12-39-33.gif?raw=true)
-Angular remake of my previous [repository](https://github.com/ifelsebreak/MatchFlix-flutter). See that for more details.
-
+This is a remake of my previous [repository](https://github.com/ifelsebreak/MatchFlix-flutter), you find more details about the general idea in it.
 Made with Angular 12 and TypeScript, uses [themoviedb.org](http://themoviedb.org) API for movie data. Basic FireBase implementation.
 
 ## DISCLAIMER
